@@ -46,6 +46,6 @@ namespace ServiceSphere.repositery.Data
     //    public DbSet<FreelancerUser> FreelancerUsers { get; set; }
         public DbSet<AppUser> AppUser { get; set; }
         public DbSet<Skill> Skills { get; set; }
-
+        public DbSet<Address> Addresses { get; set; }
     }
 }

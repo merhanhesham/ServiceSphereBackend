@@ -13,7 +13,7 @@ namespace ServiceSphere.APIs.DTOs
         // public string? FreelancerId { get; set; }
         // public Freelancer Freelancer { get; set; }
         public string? UserId { get; set; }
-        public string FreelancerId { get; set; }
+        public string? FreelancerId { get; set; }
 
         public int CategoryId { get; set; }
 

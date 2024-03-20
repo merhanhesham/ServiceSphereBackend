@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using ServiceSphere.APIs.DTOs;
 using ServiceSphere.APIs.Errors;
 using ServiceSphere.APIs.Extensions;
 using ServiceSphere.core.Entities.Identity;
+using ServiceSphere.core.Entities.Services;
 using ServiceSphere.core.Entities.Users;
 using ServiceSphere.core.Entities.Users.Freelancer;
 using ServiceSphere.core.Repositeries.contract;
@@ -157,18 +159,47 @@ namespace ServiceSphere.APIs.Controllers
             });
         }
 
+        /*[Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpPost("Address")]
+        public async Task<ActionResult<AddressDto>> CreateAddress(AddressDto model)
+        {
+            var user = await _userManager.FindUserWithAddressAsync(User);
+            if (user == null)
+            {
+                return NotFound(new ApiResponse(404, "User not found."));
+            }
+
+            // Assuming model does not contain an Id value for POST operations
+            var address = _mapper.Map<Address>(model); // Map DTO to Address entity
+
+            // Add the address to the user - Implement this method in your user manager or a related service
+            var result = await _userManager.AddAddressToUserAsync(user, address);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ApiResponse(400, "Failed to add the address"));
+            }
+
+            // Optionally map back to DTO if you need to return the created object (now with an Id)
+            var createdAddressDto = _mapper.Map<AddressDto>(address);
+
+            return CreatedAtAction(nameof(CreateAddress), new { id = address.Id }, createdAddressDto);
+        }*/
+
+
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut("Address")]
         public async Task<ActionResult<AddressDto>> UpdateAddress(AddressDto model)
         {
             var user = await _userManager.FindUserWithAddressAsync(User);
-            model.Id = user.Address.Id;
+            //model.Id = user.Address.Id;
             var mappedAddress = _mapper.Map<Address>(model);
 
             user.Address = mappedAddress;
             var Result = await _userManager.UpdateAsync(user);
-            if (!Result.Succeeded) return BadRequest(new ApiResponse(400, "Failed to update the address"));
+           // var saveResult = await _userManager.
 
+            if (!Result.Succeeded) return BadRequest(new ApiResponse(400, "Failed to update the address"));
             return Ok(model);
         }
 

@@ -68,15 +68,16 @@ namespace ServiceSphere.APIs.Controllers
         }
 
        
-[HttpPut("UpdateProfile")]
+        [HttpPut("UpdateProfile")]
 
-[Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
 
-        public async Task<IActionResult> UpdateProfile([FromBody] FreelancerProfileDto freelancerProfileDto, string FreelancerId)
+        public async Task<IActionResult> UpdateProfile([FromBody] FreelancerProfileDto freelancerProfileDto, string? Email)
 
         {
 
             var email = User.FindFirstValue(ClaimTypes.Email);
+            Email = email;
 
             var user = await _userManager.FindByEmailAsync(email);
 
@@ -87,18 +88,24 @@ namespace ServiceSphere.APIs.Controllers
                 return NotFound(new ApiResponse(404, "Target user not found."));
 
             }
+            
+
+           // var freelancer = await _serviceSphereContext.Freelancers.Where(F => F.Email == user.Email).FirstOrDefaultAsync();
+            //freelancerProfileDto.UserId = freelancer.Id;
+
             //handle diff ids in aspnetusers, app user
             //var Freelancer = await _serviceSphereContext.Freelancers.Where(F => F.Email == user.Email).FirstOrDefaultAsync();
-            //freelancerProfileDto.UserId = Freelancer.Id;
+            //freelancerProfileDto.UserId = user.Id;
             var freelancer = await _serviceSphereContext.Freelancers
 
                 .Include(f => f.Categories) // Ensure Categories are included to update them
 
                 .Include(f => f.SubCategories) // Ensure SubCategories are also included for update
 
-                .FirstOrDefaultAsync(f => f.Id == FreelancerId);
+                .FirstOrDefaultAsync(f => f.Email == email);
 
-            
+
+            //freelancer.Id = user.Id;
 
             if (freelancer == null)
 
@@ -109,7 +116,7 @@ namespace ServiceSphere.APIs.Controllers
             }
 
             user.PhoneNumber = freelancerProfileDto.PhoneNumber;
-            freelancerProfileDto.UserId = FreelancerId;
+            //freelancerProfileDto.UserId = FreelancerId;
 
             var resultForUserManager = await _userManager.UpdateAsync(user);
 

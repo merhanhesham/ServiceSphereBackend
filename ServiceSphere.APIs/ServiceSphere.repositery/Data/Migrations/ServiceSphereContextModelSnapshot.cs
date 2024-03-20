@@ -241,26 +241,15 @@ namespace ServiceSphere.repositery.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Street")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ZipCode")
@@ -271,7 +260,7 @@ namespace ServiceSphere.repositery.Data.Migrations
                     b.HasIndex("AppUserId")
                         .IsUnique();
 
-                    b.ToTable("Address");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("ServiceSphere.core.Entities.Identity.AppUser", b =>
@@ -624,6 +613,10 @@ namespace ServiceSphere.repositery.Data.Migrations
                     b.Property<string>("Overview")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .ValueGeneratedOnUpdateSometimes()
@@ -632,6 +625,10 @@ namespace ServiceSphere.repositery.Data.Migrations
                     b.Property<int>("UserType")
                         .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int");
+
+                    b.Property<string>("WorkExperience")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WorkStyle")
                         .HasColumnType("nvarchar(max)");

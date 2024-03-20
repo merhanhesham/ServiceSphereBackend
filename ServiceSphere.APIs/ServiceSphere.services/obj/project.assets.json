@@ -2175,11 +2175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.services\\ServiceSphere.services.csproj",
+      "projectUniqueName": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.services\\ServiceSphere.services.csproj",
       "projectName": "ServiceSphere.services",
-      "projectPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.services\\ServiceSphere.services.csproj",
+      "projectPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.services\\ServiceSphere.services.csproj",
       "packagesPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.services\\obj\\",
+      "outputPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2200,11 +2200,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.core\\ServiceSphere.core.csproj": {
-              "projectPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.core\\ServiceSphere.core.csproj"
+            "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.core\\ServiceSphere.core.csproj": {
+              "projectPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.core\\ServiceSphere.core.csproj"
             },
-            "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.repositery\\ServiceSphere.repositery.csproj": {
-              "projectPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\apis final\\ServiceSphere.APIs\\ServiceSphere.repositery\\ServiceSphere.repositery.csproj"
+            "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.repositery\\ServiceSphere.repositery.csproj": {
+              "projectPath": "C:\\Users\\SOUQ ALCOMPUMARTS\\Desktop\\SSBackend\\ServiceSphereBackend\\ServiceSphere.APIs\\ServiceSphere.repositery\\ServiceSphere.repositery.csproj"
             }
           }
         }

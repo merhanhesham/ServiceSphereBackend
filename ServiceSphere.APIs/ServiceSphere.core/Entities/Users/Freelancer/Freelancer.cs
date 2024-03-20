@@ -24,6 +24,10 @@ namespace ServiceSphere.core.Entities.Users.Freelancer
     public class Freelancer:User
     {
         public string UserName { get; set; }
+
+        public string Title { get; set; }
+
+        public string WorkExperience { get; set; }
         public string? Bio { get; set; }
         public ExperienceLevel? experienceLevel { get; set; }
         public string? Education { get; set; }
